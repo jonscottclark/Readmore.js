@@ -9,20 +9,19 @@
  * Debounce function from http://davidwalsh.name/javascript-debounce-function
  */
 
-/* global jQuery */
-
-(function(factory) {
+;(function(factory) {
+  'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD
     define(['jquery'], factory);
-  } else if (typeof exports === 'object') {
+  } else if (typeof module !== 'undefined' && module.exports) {
     // CommonJS
     module.exports = factory(require('jquery'));
   } else {
-    // Browser globals
+    // Global
     factory(jQuery);
   }
-}(function($) {
+})(function($) {
   'use strict';
 
   var readmore = 'readmore',
@@ -326,5 +325,5 @@
     }
   };
 
-}));
+});
 
